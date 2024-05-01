@@ -59,6 +59,9 @@ html, body {
 
 .notes__list-item {
     cursor: pointer;
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
 }
 
 .notes__list-item--selected {

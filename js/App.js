@@ -26,56 +26,56 @@ export default class App {
         }
     }
 
-        //_setNotes
-        _setNotes(notes) {
-            this.notes = notes;
-            this.view.updateNoteList(notes);
-            this.view.updateNotePreviewVisibility(notes.length > 0);
-        }
+     //_setNotes
+     _setNotes(notes) {
+        this.notes = notes;
+        this.view.updateNoteList(notes);
+        this.view.updateNotePreviewVisibility(notes.length > 0);
+    }
 
 
-        //_setActiveNote
-        _setActiveNote(note) {
-            this.activeNote = note;
-            this.view.updateActiveNote(note);
-        }
+    //_setActiveNote
+    _setActiveNote(note) {
+        this.activeNote = note;
+        this.view.updateActiveNote(note);
+    }
 
-        _handlers(){
-            return{
-                onNoteSelect: noteId => {
-                    const selectedNote = this.notes.find(note => note.id == noteId);
-                    this._setActiveNote(selectedNote);
-                },
-                onNoteAdd: () => {
-                    const newNote = {
-                        title: "",
-                        body: ""
-                    };
-    
-                    NotesAPI.saveNote(newNote);
-                    this._refreshNotes();
-                },
-                onNoteEdit: (title, body) => {
-                    NotesAPI.saveNote({
-                        id: this.activeNote.id,
-                        title,
-                        body
-                    });
-    
-                    this._refreshNotes();
-                },
-                onNoteDelete:noteID=>{
-                    noteID=this.activeNote.id;
-                    NotesAPI.deletNote(noteID);
-                    this._refreshNotes();
-                }
+    _handlers(){
+        return{
+            onNoteSelect: noteId => {
+                const selectedNote = this.notes.find(note => note.id == noteId);
+                this._setActiveNote(selectedNote);
+            },
+            onNoteAdd: () => {
+                const newNote = {
+                    title: "",
+                    body: ""
+                };
 
+                NotesAPI.saveNote(newNote);
+                this._refreshNotes();
+            },
+            onNoteEdit: (title, body) => {
+                NotesAPI.saveNote({
+                    id: this.activeNote.id,
+                    title,
+                    body
+                });
 
-
+                this._refreshNotes();
+            },
+            onNoteDelete:noteID=>{
+                noteID=this.activeNote.id;
+                NotesAPI.deletNote(noteID);
+                this._refreshNotes();
             }
 
 
+
         }
+
+
+    }
 
 
 
