@@ -37,7 +37,6 @@ export default class App {
     //_setActiveNote
     _setActiveNote(note) {
         this.activeNote = note;
-        note.body=marked.parse(note.body)
         this.view.updateActiveNote(note);
     }
 

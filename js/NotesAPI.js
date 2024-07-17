@@ -14,7 +14,6 @@ export default class NotesAPI {
     static saveNote(noteToSave){
         const notes = NotesAPI.getAllNotes();
         const existing = notes.find(note=>note.id == noteToSave.id);
-        noteToSave.body=marked.parse(noteToSave.body);
         // 該內容已經存在 Updaint, 如果是新的 Editing
         if (existing) {
             existing.title = noteToSave.title;
