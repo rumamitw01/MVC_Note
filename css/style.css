@@ -21,7 +21,7 @@ html, body {
     overflow-y: auto;
     overflow-x: scroll;
     padding: 1em;
-    width: 300px;
+    width: 40%;
 }
 
 .notes__add {
