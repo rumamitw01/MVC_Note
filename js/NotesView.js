@@ -67,7 +67,7 @@ _createListItemHTML(id, title, body, updated) {
         notesListContainer.innerHTML = "";
 
         for (const note of notes) {
-            const html = this._createListItemHTML(note.id, note.title, note.body, new Date(note.updated));
+            const html = this._createListItemHTML(note.id, note.title, marked.parse(note.body), new Date(note.updated));
 
             notesListContainer.insertAdjacentHTML("beforeend", html);
         }
