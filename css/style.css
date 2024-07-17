@@ -19,7 +19,7 @@ html, body {
     border-right: 2px solid #dddddd;
     flex-shrink: 0;
     overflow-y: auto;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding: 1em;
     width: 40%;
 }
@@ -61,7 +61,7 @@ html, body {
 .notes__list-item {
     cursor: pointer;
     user-select:none;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-user-select:none;
     -moz-user-select:none;
 }
