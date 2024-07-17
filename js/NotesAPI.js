@@ -34,14 +34,11 @@ export default class NotesAPI {
     //updateNote
     static deletNote(id){
         const notes = NotesAPI.getAllNotes();
-        console.log(notes);
-        console.log(id);
         for (var i=0;i<notes.length;i++){
             if (notes[i].id==id){
                 notes.splice(i,1);
             }
         }
-        console.log(notes);
         
  
         localStorage.setItem("notesapp-notes", JSON.stringify(notes));
