@@ -87,7 +87,8 @@ _createListItemHTML(id, title, body, updated) {
 
     updateActiveNote(note) {
         this.root.querySelector(".notes__title").value = note.title;
-        this.root.querySelector(".notes__body").innerHTML = note.body;
+        this.root.querySelector(".notes__body").value = note.body;
+        this.root.querySelector(".notes__body").insertAdjacentHTML("beforeend", this._createListItemHTML(note.id, note.title, marked.parse(note.body), new Date(note.updated)));
 
         this.root.querySelectorAll(".notes__list-item").forEach(noteListItem => {
             noteListItem.classList.remove("notes__list-item--selected");
