@@ -50,7 +50,7 @@ _createListItemHTML(id, title, body, updated) {
         <div class="notes__list-item" data-note-id="${id}">
             <div class="notes__small-title">${title}</div>
             <div class="notes__small-body">
-                ${body.substring(0, 60)}
+                ${body.substring(0, MAX_BODY_LENGTH)}
                 ${body.length > MAX_BODY_LENGTH ? "..." : ""}
             </div>
             <div class="notes__small-updated">
