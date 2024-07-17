@@ -1,6 +1,6 @@
 import NotesView from "./NotesView.js";
 import NotesAPI from "./NotesAPI.js";
-
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 // 操作 輸入 指令 最終 都要送到 main 
 
 export default class App {
