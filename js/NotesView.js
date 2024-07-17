@@ -44,7 +44,7 @@ export default class NotesView {
 }
 //寫在 contstructor 之後
 _createListItemHTML(id, title, body, updated) {
-    const MAX_BODY_LENGTH = 60;
+    const MAX_BODY_LENGTH = 500;
 
     return `
         <div class="notes__list-item" data-note-id="${id}">
