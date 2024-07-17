@@ -61,6 +61,7 @@ html, body {
 .notes__list-item {
     cursor: pointer;
     user-select:none;
+    overflow-x: scroll;
     -webkit-user-select:none;
     -moz-user-select:none;
 }
